@@ -37,6 +37,11 @@ typedef NS_ENUM(NSInteger, mk_cs_duplicateDataFilter) {
     mk_cs_duplicateDataFilter_macAndRawData
 };
 
+typedef NS_ENUM(NSInteger, mk_cs_duplicateDataFilterStrategy) {
+    mk_cs_duplicateDataFilterStrategy1,
+    mk_cs_duplicateDataFilterStrategy2,
+};
+
 typedef NS_ENUM(NSInteger, mk_cs_PHYMode) {
     mk_bv_PHYMode_BLE4,                     //1M PHY (BLE 4.x)
     mk_bv_PHYMode_BLE5,                     //1M PHY (BLE 5)

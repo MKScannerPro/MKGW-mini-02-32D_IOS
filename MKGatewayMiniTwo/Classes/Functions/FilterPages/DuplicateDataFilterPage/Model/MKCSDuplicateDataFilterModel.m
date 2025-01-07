@@ -63,6 +63,7 @@
     [MKCSMQTTInterface cs_readDuplicateDataFilterDatasWithMacAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.rule = [returnData[@"data"][@"rule"] integerValue];
+        self.strategy = [returnData[@"data"][@"mode"] integerValue];
         self.time = [NSString stringWithFormat:@"%@",returnData[@"data"][@"timeout"]];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
@@ -74,7 +75,7 @@
 
 - (BOOL)configDuplicateDataFilter {
     __block BOOL success = NO;
-    [MKCSMQTTInterface cs_configDuplicateDataFilter:self.rule period:[self.time longLongValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+    [MKCSMQTTInterface cs_configDuplicateDataFilter:self.rule strategy:self.strategy period:[self.time longLongValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

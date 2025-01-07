@@ -37,6 +37,8 @@ MKTextFieldCellDelegate>
 
 @property (nonatomic, strong)NSMutableArray *section1List;
 
+@property (nonatomic, strong)NSMutableArray *section2List;
+
 @property (nonatomic, strong)MKCSDuplicateDataFilterModel *dataModel;
 
 @end
@@ -71,7 +73,7 @@ MKTextFieldCellDelegate>
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,6 +82,9 @@ MKTextFieldCellDelegate>
     }
     if (section == 1) {
         return (self.dataModel.rule == 0 ? 0 : self.section1List.count);
+    }
+    if (section == 2) {
+        return (self.dataModel.rule == 0 ? 0 : self.section2List.count);
     }
     return 0;
 }
@@ -91,8 +96,14 @@ MKTextFieldCellDelegate>
         cell.delegate = self;
         return cell;
     }
+    if (indexPath.section == 1) {
+        MKTextButtonCell *cell = [MKTextButtonCell initCellWithTableView:tableView];
+        cell.dataModel = self.section1List[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
     MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:tableView];
-    cell.dataModel = self.section1List[indexPath.row];
+    cell.dataModel = self.section2List[indexPath.row];
     cell.delegate = self;
     return cell;
 }
@@ -110,7 +121,14 @@ MKTextFieldCellDelegate>
         self.dataModel.rule = dataListIndex;
         MKTextButtonCellModel *cellModel = self.section0List[0];
         cellModel.dataListIndex = dataListIndex;
-        [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadData];
+        return;
+    }
+    if (index == 1) {
+        //strategy
+        self.dataModel.strategy = dataListIndex;
+        MKTextButtonCellModel *cellModel = self.section1List[0];
+        cellModel.dataListIndex = dataListIndex;
         return;
     }
 }
@@ -162,6 +180,7 @@ MKTextFieldCellDelegate>
 - (void)loadSectionDatas {
     [self loadSection0Datas];
     [self loadSection1Datas];
+    [self loadSection2Datas];
     
     [self.tableView reloadData];
 }
@@ -176,6 +195,15 @@ MKTextFieldCellDelegate>
 }
 
 - (void)loadSection1Datas {
+    MKTextButtonCellModel *cellModel = [[MKTextButtonCellModel alloc] init];
+    cellModel.index = 1;
+    cellModel.msg = @"Filter strategy";
+    cellModel.dataList = @[@"strategy1",@"strategy2"];
+    cellModel.dataListIndex = self.dataModel.strategy;
+    [self.section1List addObject:cellModel];
+}
+
+- (void)loadSection2Datas {
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
     cellModel.index = 0;
     cellModel.msg = @"Filtering Period";
@@ -184,7 +212,7 @@ MKTextFieldCellDelegate>
     cellModel.textFieldType = mk_realNumberOnly;
     cellModel.maxLength = 5;
     cellModel.unit = @"Sec";
-    [self.section1List addObject:cellModel];
+    [self.section2List addObject:cellModel];
 }
 
 #pragma mark - UI
@@ -222,6 +250,13 @@ MKTextFieldCellDelegate>
         _section1List = [NSMutableArray array];
     }
     return _section1List;
+}
+
+- (NSMutableArray *)section2List {
+    if (!_section2List) {
+        _section2List = [NSMutableArray array];
+    }
+    return _section2List;
 }
 
 - (MKCSDuplicateDataFilterModel *)dataModel {

@@ -446,12 +446,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Configure scan duplicate data parameters.
 /// @param filter filter
+/// @param strategy strategy
 /// @param period 1s~86400s
 /// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
 /// @param topic topic 1-128 Characters
 /// @param sucBlock Success callback
 /// @param failedBlock Failed callback
 + (void)cs_configDuplicateDataFilter:(mk_cs_duplicateDataFilter)filter
+                            strategy:(mk_cs_duplicateDataFilterStrategy)strategy
                               period:(long long)period
                           macAddress:(NSString *)macAddress
                                topic:(NSString *)topic
