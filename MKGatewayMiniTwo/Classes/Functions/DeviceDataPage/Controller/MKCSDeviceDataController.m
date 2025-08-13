@@ -31,7 +31,9 @@
 
 #import "MKCSSettingController.h"
 #import "MKCSUploadOptionController.h"
+#import "MKCSUploadOptionV2Controller.h"
 #import "MKCSManageBleDevicesController.h"
+#import "MKCSManageBleDevicesV2Controller.h"
 #import "MKCSNormalConnectedController.h"
 #import "MKCSBXPButtonController.h"
 
@@ -122,6 +124,11 @@ MKCSReceiveDeviceDatasDelegate>
 #pragma mark - MKCSDeviceDataPageHeaderViewDelegate
 
 - (void)cs_updateLoadButtonAction {
+    if ([MKCSDeviceModeManager shared].isV2) {
+        MKCSUploadOptionV2Controller *vc = [[MKCSUploadOptionV2Controller alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
     MKCSUploadOptionController *vc = [[MKCSUploadOptionController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -156,6 +163,11 @@ MKCSReceiveDeviceDatasDelegate>
             return;
         }
         //网关没有连接设备
+        if ([MKCSDeviceModeManager shared].isV2) {
+            MKCSManageBleDevicesV2Controller *vc = [[MKCSManageBleDevicesV2Controller alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            return;
+        }
         MKCSManageBleDevicesController *vc = [[MKCSManageBleDevicesController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }

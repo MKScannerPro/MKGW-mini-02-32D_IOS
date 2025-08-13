@@ -49,6 +49,50 @@ typedef NS_ENUM(NSInteger, mk_cs_PHYMode) {
     mk_bv_PHYMode_CodedBLE5,                //Coded PHY(BLE 5)
 };
 
+typedef NS_ENUM(NSInteger, mk_cs_triggerEventType) {
+    mk_cs_triggerEventType_singlePress,
+    mk_cs_triggerEventType_DoublePress,
+    mk_cs_triggerEventType_longPress,
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_threeAxisDataRate) {
+    mk_cs_threeAxisDataRate1hz,           //1hz
+    mk_cs_threeAxisDataRate10hz,          //10hz
+    mk_cs_threeAxisDataRate25hz,          //25hz
+    mk_cs_threeAxisDataRate50hz,          //50hz
+    mk_cs_threeAxisDataRate100hz          //100hz
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_threeAxisDataAG) {
+    mk_cs_threeAxisDataAG0,               //±2g
+    mk_cs_threeAxisDataAG1,               //±4g
+    mk_cs_threeAxisDataAG2,               //±8g
+    mk_cs_threeAxisDataAG3                //±16g
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_bxptLedColor) {
+    mk_cs_bxptLedColor_green,
+    mk_cs_bxptLedColor_blue,
+    mk_cs_bxptLedColor_red
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_pirSensorParamType) {
+    mk_cs_pirSensorParamTypeLow,
+    mk_cs_pirSensorParamTypeMedium,
+    mk_cs_pirSensorParamTypeHigh,
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_tofRangingMode) {
+    mk_cs_tofRangingModeShortdistance,
+    mk_cs_tofRangingModeLongdistance,
+};
+
+typedef NS_ENUM(NSInteger, mk_cs_bxpcrAlarmEventType) {
+    mk_cs_bxpcrAlarmEventType_single,
+    mk_cs_bxpcrAlarmEventType_double,
+    mk_cs_bxpcrAlarmEventType_long
+};
+
 
 @protocol cs_indicatorLightStatusProtocol <NSObject>
 
@@ -243,6 +287,9 @@ typedef NS_ENUM(NSInteger, mk_cs_PHYMode) {
 
 @protocol cs_uploadDataOptionProtocol <NSObject>
 
+/// V2版本固件
+@property (nonatomic, assign)BOOL isV2;
+
 @property (nonatomic, assign)BOOL timestamp;
 
 @property (nonatomic, assign)BOOL rawData_advertising;
@@ -287,5 +334,14 @@ typedef NS_ENUM(NSInteger, mk_cs_PHYMode) {
 @property (nonatomic, assign)NSInteger txPower;
 
 @property (nonatomic, assign)NSInteger rssi1m;
+
+@end
+
+
+@protocol cs_advertiseBeaconV2Protocol <cs_advertiseBeaconProtocol>
+
+@property (nonatomic, assign)NSInteger rssi1M;
+
+@property (nonatomic, assign)BOOL connectable;
 
 @end

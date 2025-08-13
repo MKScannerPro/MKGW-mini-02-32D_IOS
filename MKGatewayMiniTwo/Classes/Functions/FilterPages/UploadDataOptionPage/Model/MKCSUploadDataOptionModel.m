@@ -59,7 +59,10 @@
         success = YES;
         self.timestamp = ([returnData[@"data"][@"timestamp"] integerValue] == 1);
         self.rawData_advertising = ([returnData[@"data"][@"adv_data"] integerValue] == 1);
-        self.rawData_response = ([returnData[@"data"][@"rsp_data"] integerValue] == 1);
+        if (![MKCSDeviceModeManager shared].isV2) {
+            //V2中无此参数
+            self.rawData_response = ([returnData[@"data"][@"rsp_data"] integerValue] == 1);
+        }
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

@@ -45,6 +45,7 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     mk_cs_server_taskStartBXPButtonDfuWithMacOperation,         //指定BXP-Button设备DFU升级
     
     mk_cs_server_taskConnectNormalBleDeviceWithMacOperation,    //网关连接指定mac地址的蓝牙设备
+    mk_cs_server_taskStartBXPDfuWithMacOperation,               //MKGW3 V2 dfu
     
 #pragma mark - Read
     mk_cs_server_taskReadKeyResetTypeOperation,         //读取按键恢复出厂设置类型
@@ -96,9 +97,117 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     mk_cs_server_taskReadAdvertiseBeaconParamsOperation,    //读取iBeacon广播参数
     mk_cs_server_taskConfigAdvertiseBeaconParamsOperation,  //配置iBeacon广播参数
     
+    mk_cs_server_taskClearTriggerEventCountOperation,       //删除触发记录
+    
     mk_cs_server_taskReadFilterByTofOperation,              //读取MK-TOF过滤
     mk_cs_server_taskConfigFilterByTofOperation,            //配置MK-TOF过滤
     
     mk_cs_server_taskReadFilterByPhyOperation,              //读取Phy过滤
     mk_cs_server_taskConfigFilterByPhyOperation,            //配置Phy过滤
+    
+    mk_cs_server_taskBxpBtnLedRemoteReminderOperation,      //BXP-B-D led远程消警
+    mk_cs_server_taskBxpBtnBuzzerRemoteReminderOperation,   //BXP-B-D buzzer远程消警
+    mk_cs_server_taskBxpBtnNotifyAccDataOperation,          //BXP-B-D 监听三轴数据
+    mk_cs_server_taskBxpBtnRemotePowerOffOperation,         //BXP-B-D 远程关机
+    mk_cs_server_taskBxpBtnReadAdvParamsOperation,          //BXP-B-D 读取广播参数
+    mk_cs_server_taskBxpBtnConfigAdvParamsOperation,        //BXP-B-D 配置广播参数
+    
+    
+    mk_cs_server_taskConnectBXPButtonCRWithMacOperation,    //BXP-B-CR 连接设备
+    mk_cs_server_taskReadBXPButtonCRConnectedDeviceInfoOperation,   //BXP-B-CR读取设备信息
+    mk_cs_server_taskReadBXPButtonCRStatusOperation,                //BXP-B-CR获取当前状态
+    mk_cs_server_taskDismissBXPBCRAlarmStatusOperation,             //BXP-B-CR消警
+    mk_cs_server_taskBxpBtnCRLedRemoteReminderOperation,            //BXP-B-CR控制LED
+    mk_cs_server_taskBxpBtnCRBuzzerRemoteReminderOperation,         //BXP-B-CR控制蜂鸣器
+    mk_cs_server_taskClearBXPButtonCREventCountOperation,           //BXP-B-CR删除触发记录
+    mk_cs_server_taskBxpBtnCRNotifyAccDataOperation,                //BXP-B-CR监听三轴数据开关
+    mk_cs_server_taskBxpBtnCRRemotePowerOffOperation,               //BXP-B-CR 远程关机
+    mk_cs_server_taskBxpBtnCRVibratingRemoteReminderOperation,      //BXP-B-CR控制马达
+    mk_cs_server_taskBXPCRNotifyAlarmDataOperation,                 //BXP-B-CR控制监听触发记录
+    mk_cs_server_taskBxpBtnCRReadAdvParamsOperation,                //BXP-B-CR读取广播参数
+    mk_cs_server_taskBxpBtnCRConfigAdvParamsOperation,              //BXP-B-CR配置广播参数
+    
+    
+    mk_cs_server_taskConnectBXPCWithMacOperation,           //BXP-C 连接设备
+    mk_cs_server_taskReadBXPCConnectedDeviceInfoOperation,  //BXP-C 读取设备信息
+    mk_cs_server_taskReadBXPCStatusOperation,               //BXP-C 获取当前状态
+    mk_cs_server_taskNotifyBXPCNotifyRealTimeHTDataOperation,   //控制实时温湿度数据监听开关
+    mk_cs_server_taskBXPCNotifyAccDataOperation,                //BXP-C 实时三轴数据监听开关
+    mk_cs_server_taskNotifyBXPCNotifyHistoricalHTDataOperation, //控制历史温湿度数据监听开关
+    mk_cs_server_taskDeleteBXPCHistoricalHTDataOperation,           //清除历史温湿度数据
+    mk_cs_server_taskBxpCPowerOffOperation,                 //BXP-C 远程关机
+    mk_cs_server_taskReadBXPCTHDataSampleRateOperation,     //BXP-C 读取温湿度采样率
+    mk_cs_server_taskConfigBXPCSampleRateOperation,         //BXP-C 配置温湿度采样率
+    mk_cs_server_taskReadBXPCAdvParamsOperation,            //BXP-C 读取广播参数
+    mk_cs_server_taskConfigBXPCAdvParamsOperation,          //BXP-C 配置广播参数
+    
+    mk_cs_server_taskConnectBXPDWithMacOperation,           //BXP-D 连接设备
+    mk_cs_server_taskReadBXPDConnectedDeviceInfoOperation,  //BXP-D 读取设备信息
+    mk_cs_server_taskReadBXPDStatusOperation,               //BXP-D 获取当前状态
+    mk_cs_server_taskReadBXPDAccParamsOperation,            //BXP-D 读取三轴参数
+    mk_cs_server_taskConfigBXPDAccParamsOperation,          //BXP-D 配置三轴参数
+    mk_cs_server_taskBXPDNotifyAccDataOperation,            //BXP-D 实时三轴监听开关
+    mk_cs_server_taskBxpDPowerOffOperation,                 //BXP-D 远程关机
+    mk_cs_server_taskReadBXPDAdvParamsOperation,            //BXP-D 读取广播参数
+    mk_cs_server_taskConfigBXPDAdvParamsOperation,          //BXP-D 配置广播参数
+    
+    mk_cs_server_taskConnectBXPTWithMacOperation,           //BXP-T 连接设备
+    mk_cs_server_taskReadBXPTConnectedDeviceInfoOperation,  //BXP-T 读取设备信息
+    mk_cs_server_taskReadBXPTStatusOperation,               //BXP-T 获取当前状态
+    mk_cs_server_taskReadBXPTAccParamsOperation,            //BXP-T 读取三轴参数
+    mk_cs_server_taskConfigBXPTAccParamsOperation,          //BXP-T 配置三轴参数
+    mk_cs_server_taskReadBXPTMotioEventCountOperation,      //BXP-T 读取移动触发次数
+    mk_cs_server_taskClearBXPTMotioEventCountOperation,     //BXP-T 清除移动触发次数
+    mk_cs_server_taskBXPTLedRemoteReminderOperation,        //BXP-T 远程控制LED
+    mk_cs_server_taskBXPTNotifyAccDataOperation,            //BXP-T 实时三轴监听开关
+    mk_cs_server_taskBxpTPowerOffOperation,                 //BXP-T 远程关机
+    mk_cs_server_taskReadBXPTAdvParamsOperation,            //BXP-T 读取广播参数
+    mk_cs_server_taskConfigBXPTAdvParamsOperation,          //BXP-T 配置广播参数
+    
+    mk_cs_server_taskConnectBXPSWithMacOperation,           //BXP-C 连接设备
+    mk_cs_server_taskReadBXPSConnectedDeviceInfoOperation,  //BXP-C 读取设备信息
+    mk_cs_server_taskReadBXPSStatusOperation,               //BXP-C 获取当前状态
+    mk_cs_server_taskNotifyBXPSNotifyRealTimeHTDataOperation,   //控制实时温湿度数据监听开关
+    mk_cs_server_taskBXPSNotifyAccDataOperation,                //BXP-C 实时三轴数据监听开关
+    mk_cs_server_taskNotifyBXPSNotifyHistoricalHTDataOperation, //控制历史温湿度数据监听开关
+    mk_cs_server_taskDeleteBXPSHistoricalHTDataOperation,           //清除历史温湿度数据
+    mk_cs_server_taskReadBXPSTHDataSampleRateOperation,     //BXP-S 读取温湿度采样率
+    mk_cs_server_taskConfigBXPSSampleRateOperation,         //BXP-S 配置温湿度采样率
+    mk_cs_server_taskReadBXPSHallCountOperation,            //BXP-S 读取hall触发次数
+    mk_cs_server_taskClearBXPSHallCountOperation,           //BXP-S 清除hall触发次数
+    mk_cs_server_taskBXPSLedRemoteReminderOperation,        //BXP-S 远程控制LED
+    mk_cs_server_taskBXPSPowerOffOperation,                 //BXP-S 远程关机
+    mk_cs_server_taskReadBXPSAdvParamsOperation,            //BXP-S 读取通道广播参数
+    mk_cs_server_taskConfigBXPSAdvParamsOperation,          //BXP-S 配置通道广播参数
+    
+    mk_cs_server_taskConnectMKPirWithMacOperation,          //MK Pir 连接设备
+    mk_cs_server_taskReadMKPirConnectedDeviceInfoOperation, //MK Pir 读取设备信息
+    mk_cs_server_taskReadMKPirStatusOperation,              //MK Pir 获取当前状态
+    mk_cs_server_taskNotifyMKPirSensorDataOperation,        //MK Pir 监听传感器数据
+    mk_cs_server_taskReadMKPirSensorSensitivityOperation,   //MK Pir 读取灵敏度
+    mk_cs_server_taskConfigMKPirSensorSensitivityOperation, //MK Pir 配置灵敏度
+    mk_cs_server_taskReadMKPirSensorDelayOperation,         //MK Pir 读取延时状态
+    mk_cs_server_taskConfigMKPirSensorDelayOperation,       //MK Pir 配置延时状态
+    mk_cs_server_taskMKPirPowerOffOperation,                //MK Pir 远程关机
+    mk_cs_server_taskReadMKPirAdvParamsOperation,           //MK Pir 读取广播参数
+    mk_cs_server_taskConfigMKPirAdvParamsOperation,         //MK Pir 配置广播参数
+    
+    mk_cs_server_taskConnectMKTofWithMacOperation,          //MK Tof 连接设备
+    mk_cs_server_taskReadMKTofConnectedDeviceInfoOperation, //MK Tof 读取设备信息
+    mk_cs_server_taskReadMKTofStatusOperation,              //MK Tof 获取当前状态
+    mk_cs_server_taskNotifyMKTofAccDataOperation,           //MK Tof 监听三轴数据
+    mk_cs_server_taskMKTofPowerOffOperation,                //MK Tof 远程关机
+    mk_cs_server_taskReadMKTofAdvParamsOperation,           //MK Tof 读取广播参数
+    mk_cs_server_taskConfigMKTofAdvParamsOperation,         //MK Tof 配置广播参数
+    mk_cs_server_taskReadMKTofSensorParamsOperation,        //MK Tof 读取采样参数
+    mk_cs_server_taskConfigMKTofSensorParamsOperation,      //MK Tof 配置采样参数
+    mk_cs_server_taskReadMKTofRangingModeOperation,         //MK Tof 读取距离模式
+    mk_cs_server_taskConfigMKTofRangingModeOperation,       //MK Tof 配置距离模式
+    mk_cs_server_taskNotifyMKTofSensorDataOperation,        //MK Tof 监听数据开关
+    
+    mk_cs_server_taskReadUploadDataIntervalOperation,           //读取数据上报间隔
+    mk_cs_server_taskConfigUploadDataIntervalOperation,     //配置数据上报间隔
+    
+    mk_cs_server_taskReadBleCommunicateTimeoutOperation,    //读取蓝牙连接通信超时时间
+    mk_cs_server_taskConfigBleCommunicateTimeoutOperation,  //配置蓝牙连接通信超时时间
 };

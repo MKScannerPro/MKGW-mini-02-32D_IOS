@@ -26,6 +26,7 @@
 #import "MKCSBLESDK.h"
 
 #import "MKCSDeviceParamsListController.h"
+#import "MKCSDeviceParamsListV2Controller.h"
 
 #import "MKCSScanPageCell.h"
 
@@ -255,8 +256,19 @@ mk_cs_centralManagerScanDelegate>
     [[MKCSCentralManager shared] connectPeripheral:deviecModel.peripheral password:password sucBlock:^(CBPeripheral * _Nonnull peripheral) {
         [[NSUserDefaults standardUserDefaults] setObject:password forKey:localPasswordKey];
         [[MKHudManager share] hide];
-        self.rightButton.selected = NO;
-        [self pushMQTTForDevicePage:deviecModel.deviceType];
+        if ([deviecModel.deviceType isEqualToString:@"70"]) {
+            //V1
+            MKCSDeviceParamsListController *vc = [[MKCSDeviceParamsListController alloc] init];
+            vc.deviceType = deviecModel.deviceType;
+            [self.navigationController pushViewController:vc animated:YES];
+            return;
+        }
+        if ([deviecModel.deviceType isEqualToString:@"71"]) {
+            //V2
+            [self readDeviceMode:deviecModel.deviceType];
+            return;
+        }
+        [self.view showCentralToast:@"Device Type Error"];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKCSCentralManager shared] disconnect];
         [[MKHudManager share] hide];
@@ -265,10 +277,20 @@ mk_cs_centralManagerScanDelegate>
     }];
 }
 
-- (void)pushMQTTForDevicePage:(NSString *)deviceType {
-    MKCSDeviceParamsListController *vc = [[MKCSDeviceParamsListController alloc] init];
-    vc.deviceType = deviceType;
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)readDeviceMode:(NSString *)deviceType {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    [MKCSInterface cs_readDeviceModeWithSucBlock:^(id  _Nonnull returnData) {
+        [[MKHudManager share] hide];
+        self.rightButton.selected = NO;
+        MKCSDeviceParamsListV2Controller *vc = [[MKCSDeviceParamsListV2Controller alloc] init];
+        vc.originMode = ([returnData[@"result"][@"mode"] integerValue] == 0);
+        [self.navigationController pushViewController:vc animated:YES];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKCSCentralManager shared] disconnect];
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+        [self connectFailed];
+    }];
 }
 
 - (void)connectFailed {

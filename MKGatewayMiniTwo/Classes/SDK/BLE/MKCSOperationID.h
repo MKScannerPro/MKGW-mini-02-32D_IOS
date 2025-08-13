@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskReadDeviceWifiSTAMacAddressOperation, //读取WIFI STA MAC地址
     mk_cs_taskReadNTPServerHostOperation,       //读取NTP服务器域名
     mk_cs_taskReadTimeZoneOperation,            //读取时区
+    mk_cs_taskReadWifiFirmwareOperation,        //读取wifi固件版本
+    mk_cs_taskReadBLEFirmwareOperation,         //读取BLE固件版本
     
 #pragma mark - Wifi Params
     mk_cs_taskReadWIFISecurityOperation,        //读取设备当前wifi的加密模式
@@ -52,6 +54,7 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskReadFilterRelationshipOperation,          //读取扫描过滤逻辑
     mk_cs_taskReadFilterMACAddressListOperation,        //读取MAC过滤列表
     mk_cs_taskReadFilterAdvNameListOperation,           //读取ADV Name过滤列表
+    mk_cs_taskReadFilterReportIntervalOperation,        //读取数据上报间隔
     
 #pragma mark - iBeacon Params
     mk_cs_taskReadAdvertiseBeaconStatusOperation,       //读取iBeacon开关
@@ -61,12 +64,15 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskReadBeaconAdvIntervalOperation,           //读取Adv interval
     mk_cs_taskReadBeaconTxPowerOperation,               //读取Tx Power
     mk_cs_taskReadBeaconRssiOperation,                      //读取RSSI@1m
+    mk_cs_taskReadConnectableOperation,                 //读取可连接状态
     
 #pragma mark - 计电量参数
     mk_cs_taskReadMeteringSwitchOperation,              //读取计量数据上报开关
     mk_cs_taskReadPowerReportIntervalOperation,         //读取电量数据上报间隔
     mk_cs_taskReadEnergyReportIntervalOperation,        //读取电能数据上报间隔
     mk_cs_taskReadLoadDetectionNotificationStatusOperation, //读取负载检测通知开关
+    
+    mk_cs_taskReadDeviceModeOperation,                  //读取设备模式
     
     
 #pragma mark - 密码特征
@@ -92,6 +98,7 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskConfigWIFIClientPrivateKeyOperation,      //配置WIFI私钥
     mk_cs_taskConfigWIFIDHCPStatusOperation,                //配置Wifi DHCP开关
     mk_cs_taskConfigWIFIIpInfoOperation,                    //配置Wifi IP地址相关信息
+    mk_cs_taskStartWifiScanOperation,                       //进行一次wifi扫描
     mk_cs_taskConfigNetworkTypeOperation,                   //配置网络接口类型
     mk_cs_taskConfigEthernetDHCPStatusOperation,            //配置Ethernet DHCP开关
     mk_cs_taskConfigEthernetIpInfoOperation,                //配置Ethernet IP地址相关信息
@@ -122,6 +129,7 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskConfigFilterRelationshipOperation,                //配置扫描过滤逻辑
     mk_cs_taskConfigFilterMACAddressListOperation,           //配置MAC过滤规则
     mk_cs_taskConfigFilterAdvNameListOperation,             //配置Adv Name过滤规则
+    mk_cs_taskConfigFilterReportIntervalOperation,          //配置数据上报间隔
     
 #pragma mark - 蓝牙广播参数
     mk_cs_taskConfigAdvertiseBeaconStatusOperation,         //配置iBeacon开关
@@ -131,6 +139,7 @@ typedef NS_ENUM(NSInteger, mk_cs_taskOperationID) {
     mk_cs_taskConfigAdvIntervalOperation,                   //配置广播频率
     mk_cs_taskConfigTxPowerOperation,                       //配置Tx Power
     mk_cs_taskConfigBeaconRssiOperation,                        //配置Beacon Rssi@1m
+    mk_cs_taskConfigConnectableOperation,                   //配置可连接状态
     
 #pragma mark - 计电量参数
     mk_cs_taskConfigMeteringSwitchOperation,                //配置计量数据上报开关

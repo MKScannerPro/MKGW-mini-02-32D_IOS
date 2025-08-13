@@ -30,8 +30,11 @@
 
 #import "MKCSDeviceMQTTParamsModel.h"
 
+#import "MKCSNearbyWifiController.h"
+
 #import "MKCSBleWifiSettingsModel.h"
 
+#import "MKCSNetworkSsidSettingsCell.h"
 #include "MKCSBleWifiSettingsCertCell.h"
 
 static NSString *const noteMsg = @"Please note the CA certificate is required, the client certificate and client key are optional.";
@@ -41,8 +44,10 @@ UITableViewDataSource,
 MKTextButtonCellDelegate,
 MKTextFieldCellDelegate,
 mk_textSwitchCellDelegate,
+MKCSNetworkSsidSettingsCellDelegate,
 MKCSBleWifiSettingsCertCellDelegate,
-MKCAFileSelectControllerDelegate>
+MKCAFileSelectControllerDelegate,
+MKCSNearbyWifiControllerDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -255,6 +260,29 @@ MKCAFileSelectControllerDelegate>
     }
 }
 
+#pragma mark - MKCSNetworkSsidSettingsCellDelegate
+- (void)cs_networkSsidSettingsCell_ssidChanged:(NSString *)ssid {
+    //SSID
+    self.dataModel.ssid = ssid;
+    MKCSNetworkSsidSettingsCellModel *cellModel = self.section2List[0];
+    cellModel.ssid = ssid;
+}
+
+- (void)cs_networkSsidSettingsCell_buttonPressed {
+    MKCSNearbyWifiController *vc = [[MKCSNearbyWifiController alloc] init];
+    vc.delegate = self;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - MKCSNearbyWifiControllerDelegate
+- (void)cs_nearbyWifiController_selectedWifi:(NSString *)ssid {
+    MKCSNetworkSsidSettingsCellModel *cellModel = self.section2List[0];
+    cellModel.ssid = ssid;
+    self.dataModel.ssid = ssid;
+    
+    [self.tableView mk_reloadSection:2 withRowAnimation:UITableViewRowAnimationNone];
+}
+
 #pragma mark - MKCSBleWifiSettingsCertCellDelegate
 - (void)cs_bleWifiSettingsCertPressed:(NSInteger)index {
     if (index == 0) {
@@ -433,6 +461,12 @@ MKCAFileSelectControllerDelegate>
     }
     if (indexPath.section == 2) {
         //SSID
+        if (self.isV2) {
+            MKCSNetworkSsidSettingsCell *cell = [MKCSNetworkSsidSettingsCell initCellWithTableView:self.tableView];
+            cell.dataModel = self.section2List[indexPath.row];
+            cell.delegate = self;
+            return cell;
+        }
         MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section2List[indexPath.row];
         cell.delegate = self;
@@ -555,6 +589,14 @@ MKCAFileSelectControllerDelegate>
 }
 
 - (void)loadSection2Datas {
+    if (self.isV2) {
+        //V2
+        MKCSNetworkSsidSettingsCellModel *cellModel = [[MKCSNetworkSsidSettingsCellModel alloc] init];
+        cellModel.ssid = self.dataModel.ssid;
+        [self.section2List addObject:cellModel];
+        return;
+    }
+    //V1
     MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
     cellModel.index = 0;
     cellModel.msg = @"SSID";

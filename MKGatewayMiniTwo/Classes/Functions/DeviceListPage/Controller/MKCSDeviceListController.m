@@ -32,6 +32,8 @@
 
 #import "CTMediator+MKCSAdd.h"
 
+#import "MKCSMQTTInterface.h"
+
 #import "MKCSDeviceListModel.h"
 
 #import "MKCSAddDeviceView.h"
@@ -107,14 +109,29 @@ MKCSDeviceModelDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![MKNetworkManager sharedInstance].currentNetworkAvailable) {
+        [self.view showCentralToast:@"Network error,please check!"];
+        return;
+    }
     MKCSDeviceListModel *deviceModel = self.dataList[indexPath.row];
     if (deviceModel.onLineState != MKCSDeviceModelStateOnline) {
         [self.view showCentralToast:@"Device is off-line!"];
         return;
     }
-    [[MKCSDeviceModeManager shared] addDeviceModel:deviceModel];
-    MKCSDeviceDataController *vc = [[MKCSDeviceDataController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    [MKCSMQTTInterface cs_readDeviceInfoWithMacAddress:deviceModel.macAddress topic:[deviceModel currentSubscribedTopic] sucBlock:^(id  _Nonnull returnData) {
+        [[MKHudManager share] hide];
+        [[MKCSDeviceModeManager shared] addDeviceModel:deviceModel];
+        NSString *firmware = returnData[@"data"][@"firmware_version"];
+        firmware = [firmware stringByReplacingOccurrencesOfString:@"V" withString:@""];
+        firmware = [firmware stringByReplacingOccurrencesOfString:@"." withString:@""];
+        [MKCSDeviceModeManager shared].isV2 = ([firmware integerValue] >= 200);
+        MKCSDeviceDataController *vc = [[MKCSDeviceDataController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
 }
 
 #pragma mark - UITableViewDataSource

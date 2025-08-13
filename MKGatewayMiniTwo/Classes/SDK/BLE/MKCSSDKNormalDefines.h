@@ -65,3 +65,9 @@ typedef NS_ENUM(NSInteger, mk_cs_filterRelationship) {
 - (void)mk_cs_stopScan;
 
 @end
+
+@protocol mk_cs_centralManagerScanWifiDelegate <NSObject>
+
+- (void)mk_cs_receiveWifi:(NSString *)content;
+
+@end

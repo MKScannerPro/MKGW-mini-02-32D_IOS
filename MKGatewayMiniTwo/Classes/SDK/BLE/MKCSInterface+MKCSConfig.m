@@ -773,6 +773,15 @@ static const NSInteger packDataMaxLen = 150;
                    failedBlock:failedBlock];
 }
 
++ (void)cs_startWifiScanWithSucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed015000";
+    [self configDataWithTaskID:mk_cs_taskStartWifiScanOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
 #pragma mark *********************Filter Params************************
 
 + (void)cs_configRssiFilterValue:(NSInteger)rssi
@@ -913,6 +922,21 @@ static const NSInteger packDataMaxLen = 150;
     dispatch_resume(timer);
 }
 
++ (void)cs_configFilterReportInterval:(NSInteger)interval
+                             sucBlock:(void (^)(void))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock {
+    if (interval < 0 || interval > 86400) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:4];
+    NSString *commandString = [NSString stringWithFormat:@"%@%@",@"ed016904",value];
+    [self configDataWithTaskID:mk_cs_taskConfigFilterReportIntervalOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
 #pragma mark *********************BLE Adv Params************************
 
 + (void)cs_configAdvertiseBeaconStatus:(BOOL)isOn
@@ -1009,6 +1033,16 @@ static const NSInteger packDataMaxLen = 150;
     NSString *rssiValue = [MKBLEBaseSDKAdopter hexStringFromSignedNumber:rssi];
     NSString *commandString = [NSString stringWithFormat:@"%@%@",@"ed017601",rssiValue];
     [self configDataWithTaskID:mk_cs_taskConfigBeaconRssiOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)cs_configConnectable:(BOOL)connectable
+                    sucBlock:(void (^)(void))sucBlock
+                 failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = (connectable ? @"ed01770101" : @"ed01770100");
+    [self configDataWithTaskID:mk_cs_taskConfigConnectableOperation
                           data:commandString
                       sucBlock:sucBlock
                    failedBlock:failedBlock];

@@ -40,8 +40,38 @@ extern NSString *const MKCSReceiveBxpButtonDfuProgressNotification;
 
 extern NSString *const MKCSReceiveBxpButtonDfuResultNotification;
 
+extern NSString *const MKCSReceiveBxpDfuFailedNotification;
+
 
 extern NSString *const MKCSReceiveDeviceOfflineNotification;
+
+extern NSString *const MKCSReceiveBXPBtnAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPBtnCRAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPCRealTimeHTDataNotification;
+
+extern NSString *const MKCSReceiveBXPCAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPBtnCRAlarmEventDataNotification;
+
+extern NSString *const MKCSReceiveBXPCHistoricalHTDataNotification;
+
+extern NSString *const MKCSReceiveBXPDAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPTAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPSRealTimeHTDataNotification;
+
+extern NSString *const MKCSReceiveBXPSAccDataNotification;
+
+extern NSString *const MKCSReceiveBXPSHistoricalHTDataNotification;
+
+extern NSString *const MKCSReceiveMKPirSensorDataNotification;
+
+extern NSString *const MKCSReceiveMKTofAccDataNotification;
+
+extern NSString *const MKCSReceiveMKTofDistanceDataNotification;
 
 @protocol MKCSReceiveDeviceDatasDelegate <NSObject>
 

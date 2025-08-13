@@ -118,6 +118,26 @@
                          failureBlock:failedBlock];
 }
 
++ (void)cs_readWifiFirmwareWithSucBlock:(void (^)(id returnData))sucBlock
+                            failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed001300";
+    [centralManager addTaskWithTaskID:mk_cs_taskReadWifiFirmwareOperation
+                       characteristic:peripheral.cs_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
++ (void)cs_readBLEFirmwareWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed001600";
+    [centralManager addTaskWithTaskID:mk_cs_taskReadBLEFirmwareOperation
+                       characteristic:peripheral.cs_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
 #pragma mark *********************MQTT Params************************
 
 + (void)cs_readServerHostWithSucBlock:(void (^)(id returnData))sucBlock
@@ -473,6 +493,16 @@
                          failureBlock:failedBlock];
 }
 
++ (void)cs_readFilterReportIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed006900";
+    [centralManager addTaskWithTaskID:mk_cs_taskReadFilterReportIntervalOperation
+                       characteristic:peripheral.cs_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
 #pragma mark *********************BLE Adv Params************************
 
 + (void)cs_readAdvertiseBeaconStatusWithSucBlock:(void (^)(id returnData))sucBlock
@@ -545,6 +575,16 @@
                          failureBlock:failedBlock];
 }
 
++ (void)cs_readConnectableWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed007700";
+    [centralManager addTaskWithTaskID:mk_cs_taskReadConnectableOperation
+                       characteristic:peripheral.cs_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
 #pragma mark *********************Metering Params************************
 
 + (void)cs_readMeteringSwitchWithSucBlock:(void (^)(id returnData))sucBlock
@@ -581,6 +621,16 @@
                                                failedBlock:(void (^)(NSError *error))failedBlock {
     NSString *commandString = @"ed008300";
     [centralManager addTaskWithTaskID:mk_cs_taskReadLoadDetectionNotificationStatusOperation
+                       characteristic:peripheral.cs_custom
+                          commandData:commandString
+                         successBlock:sucBlock
+                         failureBlock:failedBlock];
+}
+
++ (void)cs_readDeviceModeWithSucBlock:(void (^)(id returnData))sucBlock
+                          failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed00c000";
+    [centralManager addTaskWithTaskID:mk_cs_taskReadDeviceModeOperation
                        characteristic:peripheral.cs_custom
                           commandData:commandString
                          successBlock:sucBlock
