@@ -27,7 +27,7 @@
 #import "MKCSDeviceModel.h"
 
 #import "MKCSNormalConnectedController.h"
-#import "MKCSBXPButtonController.h"
+#import "MKCSBXPButtonV2Controller.h"
 #import "MKCSBXPButtonCRController.h"
 #import "MKCSBXPCController.h"
 #import "MKCSBXPDController.h"
@@ -373,7 +373,7 @@ MKCSManageBleDevicesCellDelegate>
             [self.view showCentralToast:returnData[@"data"][@"result_msg"]];
             return;
         }
-        MKCSBXPButtonController *vc = [[MKCSBXPButtonController alloc] init];
+        MKCSBXPButtonV2Controller *vc = [[MKCSBXPButtonV2Controller alloc] init];
         vc.deviceBleInfo = returnData;
         [self.navigationController pushViewController:vc animated:YES];
     } failedBlock:^(NSError * _Nonnull error) {

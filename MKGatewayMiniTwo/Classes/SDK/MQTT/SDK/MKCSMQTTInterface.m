@@ -1160,9 +1160,16 @@
         },
         @"data":@{
             @"rule":@(filter),
+            @"mode":@(strategy),
             @"timeout":@(period),
         }
     };
+    [[MKCSMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_cs_server_taskConfigDuplicateDataFilterOperation
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
 }
 
 + (void)cs_configDataReportTimeout:(NSInteger)timeout
@@ -1336,6 +1343,66 @@
                                      topic:topic
                                 macAddress:macAddress
                                     taskID:mk_cs_server_taskStartBXPButtonDfuWithMacOperation
+                                   timeout:50
+                                  sucBlock:sucBlock
+                               failedBlock:failedBlock];
+}
+
++ (void)cs_startBXPDfuWithBeaconType:(NSInteger)type
+                         firmwareUrl:(NSString *)firmwareUrl
+                             dataUrl:(NSString *)dataUrl
+                             dfuList:(NSArray <NSDictionary *>*)dfuList
+                          macAddress:(NSString *)macAddress
+                               topic:(NSString *)topic
+                            sucBlock:(void (^)(id returnData))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock {
+    if (type < 1 || type > 8) {
+        [self operationFailedBlockWithMsg:@"Dfu type error" failedBlock:failedBlock];
+        return;
+    }
+    if (!ValidArray(dfuList)) {
+        [self operationFailedBlockWithMsg:@"Dfu list cannot be empty" failedBlock:failedBlock];
+        return;
+    }
+    NSString *checkMsg = [self checkMacAddress:macAddress topic:topic];
+    if (ValidStr(checkMsg)) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    NSMutableArray *tempList = [NSMutableArray array];
+    for (NSInteger i = 0; i < dfuList.count; i ++) {
+        NSDictionary *dic = dfuList[i];
+        NSString *mac = dic[@"mac"];
+        if (!ValidStr(mac) || mac.length != 12 || ![mac regularExpressions:isHexadecimal]) {
+            [self operationFailedBlockWithMsg:@"Mac error" failedBlock:failedBlock];
+            return;
+        }
+        [tempList addObject:@{@"mac":mac,@"passwd":SafeStr(dic[@"password"])}];
+    }
+    if (!firmwareUrl || firmwareUrl.length > 256) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    if (type != 5 && type != 6 && !dataUrl || dataUrl.length > 256) {
+        [self operationFailedBlockWithMsg:checkMsg failedBlock:failedBlock];
+        return;
+    }
+    NSDictionary *data = @{
+        @"msg_id":@(1205),
+        @"device_info":@{
+                @"mac":macAddress
+        },
+        @"data":@{
+            @"beacon_type":@(type),
+            @"firmware_url":SafeStr(firmwareUrl),
+            @"init_data_url":SafeStr(dataUrl),
+            @"ble_dev":tempList,
+        }
+    };
+    [[MKCSMQTTDataManager shared] sendData:data
+                                     topic:topic
+                                macAddress:macAddress
+                                    taskID:mk_cs_server_taskStartBXPDfuWithMacOperation
                                    timeout:50
                                   sucBlock:sucBlock
                                failedBlock:failedBlock];

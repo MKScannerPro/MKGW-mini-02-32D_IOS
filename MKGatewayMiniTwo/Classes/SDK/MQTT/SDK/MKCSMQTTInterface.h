@@ -539,6 +539,23 @@ NS_ASSUME_NONNULL_BEGIN
                                    sucBlock:(void (^)(id returnData))sucBlock
                                 failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// BXP DFU(V2).
+/// @param type 1:BXP-B-D   2:BXP-B-CR  3:BXP-C 4:BXP-D 5:BXP-TAG   6:BXP-S 7:PIR   8:TOF
+/// @param firmwareUrl Firmware file URL.1- 256 Characters.
+/// @param dataUrl Init data file URL.1- 256 Characters.
+/// @param dfuList @[@{@"mac":"aabbccddeeff",@"password":@"xxxx"}]
+/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)cs_startBXPDfuWithBeaconType:(NSInteger)type
+                         firmwareUrl:(NSString *)firmwareUrl
+                             dataUrl:(NSString *)dataUrl
+                             dfuList:(NSArray <NSDictionary *>*)dfuList
+                          macAddress:(NSString *)macAddress
+                               topic:(NSString *)topic
+                            sucBlock:(void (^)(id returnData))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark *********************Read************************
 
