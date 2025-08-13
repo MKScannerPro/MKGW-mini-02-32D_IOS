@@ -878,39 +878,6 @@ NS_ASSUME_NONNULL_BEGIN
                                      sucBlock:(void (^)(id returnData))sucBlock
                                   failedBlock:(void (^)(NSError *error))failedBlock;
 
-/// LED Reminder.
-/// @param bleMacAddress The mac address of the target bluetooth device.(e.g.AABBCCDDEEFF)
-/// @param color LED Color.
-/// @param interval flash interval.0-100(Unit:0.1s)
-/// @param duration flash time.1-6000(Unit:0.1s).
-/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
-/// @param topic topic 1-128 Characters
-/// @param sucBlock Success callback
-/// @param failedBlock Failed callback
-+ (void)cs_configDeviceLedReminderWithBleMac:(NSString *)bleMacAddress
-                                    interval:(NSInteger)interval
-                                    duration:(NSInteger)duration
-                                  macAddress:(NSString *)macAddress
-                                       topic:(NSString *)topic
-                                    sucBlock:(void (^)(id returnData))sucBlock
-                                 failedBlock:(void (^)(NSError *error))failedBlock;
-
-/// Buzzer Reminder.
-/// @param bleMacAddress The mac address of the target bluetooth device.(e.g.AABBCCDDEEFF)
-/// @param interval ring interval.0-100(Unit:0.1s).
-/// @param duration ring time.1-6000(Unit:0.1s).
-/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
-/// @param topic topic 1-128 Characters
-/// @param sucBlock Success callback
-/// @param failedBlock Failed callback
-+ (void)cs_configDeviceBuzzerReminderWithBleMac:(NSString *)bleMacAddress
-                                       interval:(NSInteger)interval
-                                       duration:(NSInteger)duration
-                                     macAddress:(NSString *)macAddress
-                                          topic:(NSString *)topic
-                                       sucBlock:(void (^)(id returnData))sucBlock
-                                    failedBlock:(void (^)(NSError *error))failedBlock;
-
 /// Filter by MK-TOF.
 /// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
 /// @param topic topic 1-128 Characters
@@ -2382,6 +2349,29 @@ NS_ASSUME_NONNULL_BEGIN
                                         topic:(NSString *)topic
                                      sucBlock:(void (^)(id returnData))sucBlock
                                   failedBlock:(void (^)(NSError *error))failedBlock;
+
+#pragma mark *********************  Normal Ble  ************************
+/// Bluetooth communicate timeout.
+/// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)cs_readBleCommunicateTimeoutWithMacAddress:(NSString *)macAddress
+                                             topic:(NSString *)topic
+                                          sucBlock:(void (^)(id returnData))sucBlock
+                                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Bluetooth communicate timeout.
+/// @param timeout 0min~60mins.
+/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)cs_configBleCommunicateTimeout:(NSInteger)timeout
+                            macAddress:(NSString *)macAddress
+                                 topic:(NSString *)topic
+                              sucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

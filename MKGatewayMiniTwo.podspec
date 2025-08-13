@@ -749,11 +749,16 @@ TODO: Add long description of the pod here.
         ssss.subspec 'BXPButtonPage' do |sssss|
             sssss.subspec 'Controller' do |ssssss|
                 ssssss.source_files = 'MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/Controller/**'
+                
+                ssssss.dependency 'MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View'
                                 
                 ssssss.dependency 'MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage'
                 ssssss.dependency 'MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage'
                 ssssss.dependency 'MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAccDataPage'
                 ssssss.dependency 'MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage'
+            end
+            sssss.subspec 'View' do |ssssss|
+                ssssss.source_files = 'MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View/**'
             end
         end
         ssss.subspec 'BXPButtonRemoteReminderPage' do |sssss|
@@ -1235,6 +1240,17 @@ TODO: Add long description of the pod here.
                 end
                 sssss.subspec 'Model'  do |ssssss|
                   ssssss.source_files = 'MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconPage/Model/**'
+                end
+            end
+            
+            ssss.subspec 'AdvBeaconV2Page' do |sssss|
+                sssss.subspec 'Controller'  do |ssssss|
+                  ssssss.source_files = 'MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Controller/**'
+                
+                  ssssss.dependency 'MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model'
+                end
+                sssss.subspec 'Model'  do |ssssss|
+                  ssssss.source_files = 'MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model/**'
                 end
             end
           

@@ -1,5 +1,5 @@
 //
-//  MKCSBXPButtonController.h
+//  MKCSBXPButtonV2Controller.h
 //  MKGatewayMiniTwo_Example
 //
 //  Created by aa on 2023/2/10.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKCSBXPButtonController : MKCSBaseViewController
+@interface MKCSBXPButtonV2Controller : MKCSBaseViewController
 
 @property (nonatomic, strong)NSDictionary *deviceBleInfo;
 

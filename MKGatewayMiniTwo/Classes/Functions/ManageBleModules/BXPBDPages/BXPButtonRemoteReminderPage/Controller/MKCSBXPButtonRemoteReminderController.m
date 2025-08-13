@@ -200,7 +200,6 @@ MKCSRemoteReminderCellDelegate>
         [self.view showCentralToast:@"Blink Interval Error"];
         return ;
     }
-    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
     [[MKHudManager share] showHUDWithTitle:@"Waiting..." inView:self.view isPenetration:NO];
     [MKCSMQTTInterface cs_bxpBtnLedRemoteReminderWithBleMac:self.bleMac blinkingTime:[self.dataModel.blinkingTime integerValue] blinkingInterval:[self.dataModel.blinkingInterval integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         [[MKHudManager share] hide];

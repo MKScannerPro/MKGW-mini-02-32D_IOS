@@ -309,7 +309,7 @@ MKCSButtonFirmwareCellDelegate>
         return;
     }
     [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
-    [MKCSMQTTInterface cs_configDeviceLedReminderWithBleMac:self.deviceBleInfo[@"data"][@"mac"] interval:[interval integerValue] duration:[duration integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+    [MKCSMQTTInterface cs_bxpBtnLedRemoteReminderWithBleMac:self.deviceBleInfo[@"data"][@"mac"] blinkingTime:[duration integerValue] blinkingInterval:[interval integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         [[MKHudManager share] hide];
         if ([returnData[@"data"][@"result_code"] integerValue] != 0) {
             [self.view showCentralToast:@"setup failed!"];
@@ -328,7 +328,7 @@ MKCSButtonFirmwareCellDelegate>
         return;
     }
     [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
-    [MKCSMQTTInterface cs_configDeviceBuzzerReminderWithBleMac:self.deviceBleInfo[@"data"][@"mac"] interval:[interval integerValue] duration:[duration integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+    [MKCSMQTTInterface cs_bxpBtnBuzzerRemoteReminderWithBleMac:self.deviceBleInfo[@"data"][@"mac"] ringTime:[duration integerValue] ringInterval:[interval integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         [[MKHudManager share] hide];
         if ([returnData[@"data"][@"result_code"] integerValue] != 0) {
             [self.view showCentralToast:@"setup failed!"];

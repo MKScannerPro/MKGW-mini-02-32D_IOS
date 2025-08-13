@@ -62,7 +62,7 @@
         if (!success) {
             return @{};
         }
-        return [self dataParserGetDataSuccess:json operationID:mk_cs_server_taskConfigDeviceLedReminderOperation];
+        return [self dataParserGetDataSuccess:json operationID:mk_cs_server_taskBxpBtnLedRemoteReminderOperation];
     }
     if (msgID == 3112) {
         //控制B1 蜂鸣器结果
@@ -70,7 +70,7 @@
         if (!success) {
             return @{};
         }
-        return [self dataParserGetDataSuccess:json operationID:mk_cs_server_taskConfigDeviceBuzzerReminderOperation];
+        return [self dataParserGetDataSuccess:json operationID:mk_cs_server_taskBxpBtnBuzzerRemoteReminderOperation];
     }
     if (msgID == 3114) {
         //删除触发记录
@@ -968,7 +968,7 @@
         //指定BXP-Button设备DFU升级
         operationID = mk_cs_server_taskStartBXPButtonDfuWithMacOperation;
     }else if (msgID == 1205) {
-        //指定MKGW3 V2设备DFU升级
+        //指定MKCS3 V2设备DFU升级
         operationID = mk_cs_server_taskStartBXPDfuWithMacOperation;
     }else if (msgID == 1209) {
         //配置蓝牙连接通信超时时间

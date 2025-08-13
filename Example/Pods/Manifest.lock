@@ -1824,6 +1824,7 @@ PODS:
     - MKGatewayMiniTwo/DeviceModel
     - MKGatewayMiniTwo/Expand
     - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/Controller (= 0.0.1)
+    - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View (= 0.0.1)
     - MKGatewayMiniTwo/SDK
     - MLInputDodger
   - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/Controller (0.0.1):
@@ -1835,7 +1836,16 @@ PODS:
     - MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage
     - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAccDataPage
     - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage
+    - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View
     - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage
+    - MKGatewayMiniTwo/SDK
+    - MLInputDodger
+  - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKGatewayMiniTwo/CTMediator
+    - MKGatewayMiniTwo/DeviceModel
+    - MKGatewayMiniTwo/Expand
     - MKGatewayMiniTwo/SDK
     - MLInputDodger
   - MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage (0.0.1):
@@ -3000,6 +3010,7 @@ PODS:
     - MKGatewayMiniTwo/DeviceModel
     - MKGatewayMiniTwo/Expand
     - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconPage (= 0.0.1)
+    - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page (= 0.0.1)
     - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/CommunicatePage (= 0.0.1)
     - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/DataReportPage (= 0.0.1)
     - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/IndicatorSettingsPage (= 0.0.1)
@@ -3030,6 +3041,33 @@ PODS:
     - MKGatewayMiniTwo/SDK
     - MLInputDodger
   - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconPage/Model (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKGatewayMiniTwo/CTMediator
+    - MKGatewayMiniTwo/DeviceModel
+    - MKGatewayMiniTwo/Expand
+    - MKGatewayMiniTwo/SDK
+    - MLInputDodger
+  - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKGatewayMiniTwo/CTMediator
+    - MKGatewayMiniTwo/DeviceModel
+    - MKGatewayMiniTwo/Expand
+    - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Controller (= 0.0.1)
+    - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model (= 0.0.1)
+    - MKGatewayMiniTwo/SDK
+    - MLInputDodger
+  - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Controller (0.0.1):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKGatewayMiniTwo/CTMediator
+    - MKGatewayMiniTwo/DeviceModel
+    - MKGatewayMiniTwo/Expand
+    - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model
+    - MKGatewayMiniTwo/SDK
+    - MLInputDodger
+  - MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model (0.0.1):
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKGatewayMiniTwo/CTMediator
@@ -3359,7 +3397,7 @@ SPEC CHECKSUMS:
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKBaseMQTTModule: 6a934ccf507e0eb807ef8f8a74dacd5d60216834
   MKCustomUIModule: 8426eba1d3178b06d92741d31da32502920fb8fa
-  MKGatewayMiniTwo: 98b69544a299537c82c934592544d46668404823
+  MKGatewayMiniTwo: 1bf89e1768b2a96d8b858a40959b8bab6bbcb2b1
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e

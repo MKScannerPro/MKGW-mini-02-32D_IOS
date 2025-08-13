@@ -26,10 +26,18 @@
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
-        if (![self readCommunicateTimeout]) {
-            [self operationFailedBlockWithMsg:@"Read Data Error" block:failedBlock];
-            return;
+        if ([MKCSDeviceModeManager shared].isV2) {
+            if (![self readCommunicateTimeoutV2]) {
+                [self operationFailedBlockWithMsg:@"Read Data Error" block:failedBlock];
+                return;
+            }
+        }else {
+            if (![self readCommunicateTimeout]) {
+                [self operationFailedBlockWithMsg:@"Read Data Error" block:failedBlock];
+                return;
+            }
         }
+        
         moko_dispatch_main_safe(^{
             sucBlock();
         });
@@ -38,10 +46,18 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
-        if (![self configCommunicateTimeout]) {
-            [self operationFailedBlockWithMsg:@"Config Data Error" block:failedBlock];
-            return;
+        if ([MKCSDeviceModeManager shared].isV2) {
+            if (![self configCommunicateTimeoutV2]) {
+                [self operationFailedBlockWithMsg:@"Config Data Error" block:failedBlock];
+                return;
+            }
+        }else {
+            if (![self configCommunicateTimeout]) {
+                [self operationFailedBlockWithMsg:@"Config Data Error" block:failedBlock];
+                return;
+            }
         }
+        
         moko_dispatch_main_safe(^{
             sucBlock();
         });
@@ -65,6 +81,31 @@
 - (BOOL)configCommunicateTimeout {
     __block BOOL success = NO;
     [MKCSMQTTInterface cs_configCommunicationTimeout:[self.timeout integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readCommunicateTimeoutV2 {
+    __block BOOL success = NO;
+    [MKCSMQTTInterface cs_readBleCommunicateTimeoutWithMacAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.timeout = [NSString stringWithFormat:@"%@",returnData[@"data"][@"timeout"]];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)configCommunicateTimeoutV2 {
+    __block BOOL success = NO;
+    [MKCSMQTTInterface cs_configBleCommunicateTimeout:[self.timeout integerValue] macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

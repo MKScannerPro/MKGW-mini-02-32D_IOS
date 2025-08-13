@@ -17,6 +17,8 @@
 #import "MKHudManager.h"
 #import "MKNormalTextCell.h"
 
+#import "MKCSDeviceModeManager.h"
+
 #import "MKCSDeviceInfoModel.h"
 
 @interface MKCSDeviceInfoController ()<UITableViewDelegate, UITableViewDataSource>
@@ -113,8 +115,15 @@
     cellModel7.rightMsg = self.dataModel.wifiStaMac;
     [self.dataList addObject:cellModel7];
     
+    if ([MKCSDeviceModeManager shared].isV2) {
+        MKNormalTextCellModel *cellModel10 = [[MKNormalTextCellModel alloc] init];
+        cellModel10.leftMsg = @"BLE Firmware version";
+        cellModel10.rightMsg = self.dataModel.bleFirmware;
+        [self.dataList addObject:cellModel10];
+    }
+    
     MKNormalTextCellModel *cellModel8 = [[MKNormalTextCellModel alloc] init];
-    cellModel8.leftMsg = @"BT MAC";
+    cellModel8.leftMsg = ([MKCSDeviceModeManager shared].isV2 ? @"BLE MAC" : @"BT MAC");
     cellModel8.rightMsg = self.dataModel.btMac;
     [self.dataList addObject:cellModel8];
     

@@ -1,12 +1,12 @@
 //
-//  MKCSBXPButtonController.m
+//  MKCSBXPButtonV2Controller.m
 //  MKGatewayMiniTwo_Example
 //
 //  Created by aa on 2023/2/10.
 //  Copyright © 2023 aadyx2007@163.com. All rights reserved.
 //
 
-#import "MKCSBXPButtonController.h"
+#import "MKCSBXPButtonV2Controller.h"
 
 #import "Masonry.h"
 
@@ -41,7 +41,7 @@
 #import "MKCSBXPButtonAccDataController.h"
 #import "MKCSBXPButtonAdvParamsController.h"
 
-@interface MKCSBXPButtonController ()<UITableViewDelegate,
+@interface MKCSBXPButtonV2Controller ()<UITableViewDelegate,
 UITableViewDataSource,
 MKButtonMsgCellDelegate,
 MKCSButtonFirmwareCellDelegate,
@@ -73,10 +73,10 @@ MKCSPressEventCountCellDelegate>
 
 @end
 
-@implementation MKCSBXPButtonController
+@implementation MKCSBXPButtonV2Controller
 
 - (void)dealloc {
-    NSLog(@"MKCSBXPButtonController销毁");
+    NSLog(@"MKCSBXPButtonV2Controller销毁");
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

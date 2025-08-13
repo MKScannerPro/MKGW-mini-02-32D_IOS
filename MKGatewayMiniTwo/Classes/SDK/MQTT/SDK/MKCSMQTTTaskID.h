@@ -45,7 +45,7 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     mk_cs_server_taskStartBXPButtonDfuWithMacOperation,         //指定BXP-Button设备DFU升级
     
     mk_cs_server_taskConnectNormalBleDeviceWithMacOperation,    //网关连接指定mac地址的蓝牙设备
-    mk_cs_server_taskStartBXPDfuWithMacOperation,               //MKGW3 V2 dfu
+    mk_cs_server_taskStartBXPDfuWithMacOperation,               //MKCS3 V2 dfu
     
 #pragma mark - Read
     mk_cs_server_taskReadKeyResetTypeOperation,         //读取按键恢复出厂设置类型
@@ -84,8 +84,6 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     mk_cs_server_taskReadBXPButtonConnectedDeviceInfoOperation, //读取已连接BXP-Button设备信息
     mk_cs_server_taskReadBXPButtonStatusOperation,              //读取已连接BXP-Button的状态
     mk_cs_server_taskDismissAlarmStatusOperation,               //BXP-Button消警
-    mk_cs_server_taskConfigDeviceLedReminderOperation,          //LED提醒
-    mk_cs_server_taskConfigDeviceBuzzerReminderOperation,       //Buzzer提醒
     
     mk_cs_server_taskReadGatewayBleConnectStatusOperation,      //读取网关蓝牙连接的状态
     

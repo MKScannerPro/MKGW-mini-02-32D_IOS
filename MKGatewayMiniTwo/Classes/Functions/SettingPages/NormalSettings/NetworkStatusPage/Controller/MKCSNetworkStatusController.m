@@ -92,6 +92,7 @@
 #pragma mark - UI
 - (void)loadSubViews {
     self.defaultTitle = @"Network Status report interval";
+    self.titleLabel.font = MKFont(15.f);
     [self.rightButton setImage:LOADICON(@"MKGatewayMiniTwo", @"MKCSNetworkStatusController", @"cs_saveIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.textField];
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {

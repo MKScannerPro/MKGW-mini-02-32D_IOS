@@ -1158,6 +1158,9 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/Controller/**",
                       "dependencies": {
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View": [
+
+                        ],
                         "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
 
                         ],
@@ -1171,6 +1174,10 @@
 
                         ]
                       }
+                    },
+                    {
+                      "name": "View",
+                      "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View/**"
                     }
                   ]
                 },
@@ -2044,6 +2051,24 @@
                     {
                       "name": "Model",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconPage/Model/**"
+                    }
+                  ]
+                },
+                {
+                  "name": "AdvBeaconV2Page",
+                  "subspecs": [
+                    {
+                      "name": "Controller",
+                      "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Controller/**",
+                      "dependencies": {
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model": [
+
+                        ]
+                      }
+                    },
+                    {
+                      "name": "Model",
+                      "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model/**"
                     }
                   ]
                 },
