@@ -3366,7 +3366,7 @@ DEPENDENCIES:
   - MKGatewayMiniTwo (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - CircleProgressBar
     - CTMediator
     - FMDB
@@ -3397,12 +3397,12 @@ SPEC CHECKSUMS:
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKBaseMQTTModule: 6a934ccf507e0eb807ef8f8a74dacd5d60216834
   MKCustomUIModule: 8426eba1d3178b06d92741d31da32502920fb8fa
-  MKGatewayMiniTwo: 1bf89e1768b2a96d8b858a40959b8bab6bbcb2b1
+  MKGatewayMiniTwo: c8010d491869bfe69790ca2f8424de903fbffb1c
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
 
-PODFILE CHECKSUM: edf88c5b60879806da167cb904b220e6cc228a96
+PODFILE CHECKSUM: 8a608f68d126c22dd5166e2920e6612671e5fe53
 
-COCOAPODS: 1.16.1
+COCOAPODS: 1.16.2

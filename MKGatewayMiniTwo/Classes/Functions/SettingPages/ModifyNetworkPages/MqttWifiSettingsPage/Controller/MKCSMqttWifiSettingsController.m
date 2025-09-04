@@ -197,51 +197,51 @@ mk_textSwitchCellDelegate>
         return;
     }
     if (index == 5) {
-        //CA certificate path
+        //CA cert file URL
         self.dataModel.caFilePath = value;
-        MKTextFieldCellModel *cellModel = self.section7List[0];
-        cellModel.textFieldValue = value;
-        return;
-    }
-    if (index == 6) {
-        //Client cert path
-        self.dataModel.clientCertPath = value;
         MKTextFieldCellModel *cellModel = self.section8List[0];
         cellModel.textFieldValue = value;
         return;
     }
-    if (index == 7) {
-        //Client key path
-        self.dataModel.clientKeyPath = value;
+    if (index == 6) {
+        //Client cert file URL
+        self.dataModel.clientCertPath = value;
         MKTextFieldCellModel *cellModel = self.section9List[0];
+        cellModel.textFieldValue = value;
+        return;
+    }
+    if (index == 7) {
+        //Client key file URL
+        self.dataModel.clientKeyPath = value;
+        MKTextFieldCellModel *cellModel = self.section10List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 8) {
         //Ethernet IP
         self.dataModel.ip = value;
-        MKTextFieldCellModel *cellModel = self.section10List[0];
+        MKTextFieldCellModel *cellModel = self.section12List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 9) {
         //Mask
         self.dataModel.mask = value;
-        MKTextFieldCellModel *cellModel = self.section10List[1];
+        MKTextFieldCellModel *cellModel = self.section12List[1];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 10) {
         //Gateway
         self.dataModel.gateway = value;
-        MKTextFieldCellModel *cellModel = self.section10List[2];
+        MKTextFieldCellModel *cellModel = self.section12List[2];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 11) {
         //DNS
         self.dataModel.dns = value;
-        MKTextFieldCellModel *cellModel = self.section10List[3];
+        MKTextFieldCellModel *cellModel = self.section12List[3];
         cellModel.textFieldValue = value;
         return;
     }

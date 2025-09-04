@@ -28,92 +28,62 @@
       "name": "Target",
       "source_files": "MKGatewayMiniTwo/Classes/Target/**",
       "dependencies": {
-        "MKBaseModuleLibrary": [
-
-        ],
-        "MKGatewayMiniTwo/Functions": [
-
-        ]
+        "MKBaseModuleLibrary": [],
+        "MKGatewayMiniTwo/Functions": []
       }
     },
     {
       "name": "CTMediator",
       "source_files": "MKGatewayMiniTwo/Classes/CTMediator/**",
       "dependencies": {
-        "CTMediator": [
-
-        ],
-        "MKBaseModuleLibrary": [
-
-        ]
+        "CTMediator": [],
+        "MKBaseModuleLibrary": []
       }
     },
     {
       "name": "DeviceModel",
       "source_files": "MKGatewayMiniTwo/Classes/DeviceModel/**",
       "dependencies": {
-        "MKBaseModuleLibrary": [
-
-        ],
-        "MKGatewayMiniTwo/SDK/MQTT": [
-
-        ]
+        "MKBaseModuleLibrary": [],
+        "MKGatewayMiniTwo/SDK/MQTT": []
       }
     },
     {
       "name": "Expand",
       "dependencies": {
-        "MKBaseModuleLibrary": [
-
-        ],
-        "MKCustomUIModule": [
-
-        ]
+        "MKBaseModuleLibrary": [],
+        "MKCustomUIModule": []
       },
       "subspecs": [
         {
           "name": "BleBaseController",
           "source_files": "MKGatewayMiniTwo/Classes/Expand/BleBaseController/**",
           "dependencies": {
-            "MKGatewayMiniTwo/SDK/BLE": [
-
-            ]
+            "MKGatewayMiniTwo/SDK/BLE": []
           }
         },
         {
           "name": "BaseController",
           "source_files": "MKGatewayMiniTwo/Classes/Expand/BaseController/**",
           "dependencies": {
-            "MKGatewayMiniTwo/SDK/MQTT": [
-
-            ],
-            "MKGatewayMiniTwo/DeviceModel": [
-
-            ]
+            "MKGatewayMiniTwo/SDK/MQTT": [],
+            "MKGatewayMiniTwo/DeviceModel": []
           }
         },
         {
           "name": "DatabaseManager",
           "source_files": "MKGatewayMiniTwo/Classes/Expand/DatabaseManager/**",
           "dependencies": {
-            "FMDB": [
-
-            ],
-            "MKGatewayMiniTwo/DeviceModel": [
-
-            ]
+            "FMDB": [],
+            "MKGatewayMiniTwo/DeviceModel": []
           }
         },
         {
           "name": "ExcelManager",
           "source_files": "MKGatewayMiniTwo/Classes/Expand/ExcelManager/**",
           "dependencies": {
-            "libxlsxwriter": [
-
-            ],
-            "SSZipArchive": [
-
-            ]
+            "libxlsxwriter": [],
+            "SSZipArchive": []
           }
         },
         {
@@ -187,9 +157,7 @@
           "name": "BLE",
           "source_files": "MKGatewayMiniTwo/Classes/SDK/BLE/**",
           "dependencies": {
-            "MKBaseBleModule": [
-
-            ]
+            "MKBaseBleModule": []
           }
         },
         {
@@ -199,24 +167,16 @@
               "name": "Manager",
               "source_files": "MKGatewayMiniTwo/Classes/SDK/MQTT/Manager/**",
               "dependencies": {
-                "MKBaseModuleLibrary": [
-
-                ],
-                "MKBaseMQTTModule": [
-
-                ]
+                "MKBaseModuleLibrary": [],
+                "MKBaseMQTTModule": []
               }
             },
             {
               "name": "SDK",
               "source_files": "MKGatewayMiniTwo/Classes/SDK/MQTT/SDK/**",
               "dependencies": {
-                "MKBaseModuleLibrary": [
-
-                ],
-                "MKGatewayMiniTwo/SDK/MQTT/Manager": [
-
-                ]
+                "MKBaseModuleLibrary": [],
+                "MKGatewayMiniTwo/SDK/MQTT/Manager": []
               }
             }
           ]
@@ -226,27 +186,13 @@
     {
       "name": "Functions",
       "dependencies": {
-        "MKGatewayMiniTwo/SDK": [
-
-        ],
-        "MKGatewayMiniTwo/Expand": [
-
-        ],
-        "MKGatewayMiniTwo/CTMediator": [
-
-        ],
-        "MKGatewayMiniTwo/DeviceModel": [
-
-        ],
-        "MKBaseModuleLibrary": [
-
-        ],
-        "MKCustomUIModule": [
-
-        ],
-        "MLInputDodger": [
-
-        ]
+        "MKGatewayMiniTwo/SDK": [],
+        "MKGatewayMiniTwo/Expand": [],
+        "MKGatewayMiniTwo/CTMediator": [],
+        "MKGatewayMiniTwo/DeviceModel": [],
+        "MKBaseModuleLibrary": [],
+        "MKCustomUIModule": [],
+        "MLInputDodger": []
       },
       "subspecs": [
         {
@@ -259,9 +205,7 @@
             {
               "name": "Pages",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/AddDeviceModules/ParamsModel": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/AddDeviceModules/ParamsModel": []
               },
               "subspecs": [
                 {
@@ -271,9 +215,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoPage/Model": []
                       }
                     },
                     {
@@ -289,9 +231,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleDeviceInfoV2Page/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoV2Page/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoV2Page/Model": []
                       }
                     },
                     {
@@ -307,9 +247,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage/Model": []
                       }
                     },
                     {
@@ -325,15 +263,9 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NearbyWifiPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/Model": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage/View": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NearbyWifiPage": []
                       }
                     },
                     {
@@ -353,9 +285,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleAdvBeaconPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconPage/Model": []
                       }
                     },
                     {
@@ -371,9 +301,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/BleAdvBeaconV2Page/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconV2Page/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconV2Page/Model": []
                       }
                     },
                     {
@@ -398,27 +326,13 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/DeviceParamsListPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ConnectSuccessPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ConnectSuccessPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice": []
                       }
                     }
                   ]
@@ -430,27 +344,13 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/DeviceParamsListV2Page/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconV2Page": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoV2Page": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ConnectSuccessPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleAdvBeaconV2Page": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleDeviceInfoV2Page": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleWifiSettingsPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/BleScannerFilterPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ConnectSuccessPage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice": []
                       }
                     }
                   ]
@@ -462,9 +362,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/NearbyWifiPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NearbyWifiPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NearbyWifiPage/View": []
                       }
                     },
                     {
@@ -480,9 +378,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/NTPTimezonePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/NTPTimezonePage/Model": []
                       }
                     },
                     {
@@ -498,12 +394,8 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/AddDeviceModules/Pages/ServerForDevice/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice/Model": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice/Model": [],
+                        "MKGatewayMiniTwo/Functions/AddDeviceModules/Pages/ServerForDevice/View": []
                       }
                     },
                     {
@@ -527,21 +419,11 @@
               "name": "Controller",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/DeviceDataPage/Controller/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/DeviceDataPage/View": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/SettingPages": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionPage": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionV2Page": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/ManageBleModules": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/DeviceDataPage/View": [],
+                "MKGatewayMiniTwo/Functions/SettingPages": [],
+                "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionPage": [],
+                "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionV2Page": [],
+                "MKGatewayMiniTwo/Functions/ManageBleModules": []
               }
             },
             {
@@ -557,21 +439,11 @@
               "name": "Controller",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/DeviceListPage/Controller/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/DeviceListPage/View": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/DeviceListPage/Model": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/ServerForApp": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/ScanPage": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/DeviceDataPage": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/DeviceListPage/View": [],
+                "MKGatewayMiniTwo/Functions/DeviceListPage/Model": [],
+                "MKGatewayMiniTwo/Functions/ServerForApp": [],
+                "MKGatewayMiniTwo/Functions/ScanPage": [],
+                "MKGatewayMiniTwo/Functions/DeviceDataPage": []
               }
             },
             {
@@ -582,9 +454,7 @@
               "name": "View",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/DeviceListPage/View/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/DeviceListPage/Model": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/DeviceListPage/Model": []
               }
             }
           ]
@@ -599,9 +469,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/DataUploadIntervalPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/DataUploadIntervalPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/DataUploadIntervalPage/Model": []
                   }
                 },
                 {
@@ -617,9 +485,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/DuplicateDataFilterPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage/Model": []
                   }
                 },
                 {
@@ -635,9 +501,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByAdvNamePage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage/Model": []
                   }
                 },
                 {
@@ -653,12 +517,8 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByBeaconPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Header": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Header": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Model": []
                   }
                 },
                 {
@@ -669,9 +529,7 @@
                   "name": "Model",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByBeaconPage/Model/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Header": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage/Header": []
                   }
                 }
               ]
@@ -683,9 +541,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByButtonPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage/Model": []
                   }
                 },
                 {
@@ -701,9 +557,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByMacPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage/Model": []
                   }
                 },
                 {
@@ -719,9 +573,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByOtherPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage/Model": []
                   }
                 },
                 {
@@ -737,9 +589,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByPirPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage/Model": []
                   }
                 },
                 {
@@ -755,36 +605,16 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByRawDataPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataPage/Model": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataPage/Model": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage": []
                   }
                 },
                 {
@@ -800,36 +630,16 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByRawDataV2Page/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataV2Page/Model": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataV2Page/Model": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByBeaconPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage": []
                   }
                 },
                 {
@@ -845,9 +655,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByTag/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag/Model": []
                   }
                 },
                 {
@@ -863,9 +671,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByTLMPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTLMPage/Model": []
                   }
                 },
                 {
@@ -881,9 +687,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByTofPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByTofPage/Model": []
                   }
                 },
                 {
@@ -899,9 +703,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByUIDPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByUIDPage/Model": []
                   }
                 },
                 {
@@ -917,9 +719,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByURLPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByURLPage/Model": []
                   }
                 },
                 {
@@ -935,9 +735,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/UploadDataOptionPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage/Model": []
                   }
                 },
                 {
@@ -953,24 +751,12 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/UploadOptionPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionPage/Model": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataPage": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionPage/Model": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataPage": []
                   }
                 },
                 {
@@ -986,27 +772,13 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/UploadOptionV2Page/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionV2Page/Model": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/DataUploadIntervalPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataV2Page": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/FilterPages/UploadOptionV2Page/Model": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/DuplicateDataFilterPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/DataUploadIntervalPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/UploadDataOptionPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByMacPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByAdvNamePage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByRawDataV2Page": []
                   }
                 },
                 {
@@ -1027,9 +799,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/ButtonDFUPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage/Model": []
                   }
                 },
                 {
@@ -1048,21 +818,11 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRRemoteReminderPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAdvParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRRemoteReminderPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAdvParamsPage": []
                       }
                     }
                   ]
@@ -1074,9 +834,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRRemoteReminderPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRRemoteReminderPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRRemoteReminderPage/Model": []
                       }
                     },
                     {
@@ -1092,9 +850,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAccDataPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAccDataPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAccDataPage/View": []
                       }
                     },
                     {
@@ -1110,9 +866,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1128,12 +882,8 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage/View": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage/View": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCREventAlarmPage/Model": []
                       }
                     },
                     {
@@ -1158,21 +908,11 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage/View": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage": []
                       }
                     },
                     {
@@ -1188,9 +928,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonRemoteReminderPage/Model": []
                       }
                     },
                     {
@@ -1215,9 +953,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1247,9 +983,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPCPages/BXPCAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1265,24 +999,12 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPCPages/BXPCPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCRealTimeTHDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCHistoricalTHDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCTHDataSampleRatePage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAdvParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCRealTimeTHDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCHistoricalTHDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCTHDataSampleRatePage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCAdvParamsPage": []
                       }
                     }
                   ]
@@ -1294,9 +1016,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPCPages/BXPCHistoricalTHDataPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCHistoricalTHDataPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCHistoricalTHDataPage/View": []
                       }
                     },
                     {
@@ -1321,9 +1041,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPCPages/BXPCTHDataSampleRatePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCTHDataSampleRatePage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCTHDataSampleRatePage/Model": []
                       }
                     },
                     {
@@ -1344,18 +1062,10 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPDPages/BXPDPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAdvParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAdvParamsPage": []
                       }
                     }
                   ]
@@ -1376,9 +1086,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPDPages/BXPDAccParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAccParamsPage/Model": []
                       }
                     },
                     {
@@ -1394,9 +1102,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPDPages/BXPDAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1426,12 +1132,8 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage/Model": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage/Model": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage/View": []
                       }
                     },
                     {
@@ -1460,30 +1162,14 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPSPages/BXPSPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRealTimeTHDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHistoricalTHDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSTHDataSampleRatePage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHallCountPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRemoteReminderPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRealTimeTHDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHistoricalTHDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSTHDataSampleRatePage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHallCountPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRemoteReminderPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSAdvParamsPage": []
                       }
                     }
                   ]
@@ -1495,9 +1181,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPSPages/BXPSHistoricalTHDataPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHistoricalTHDataPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSHistoricalTHDataPage/View": []
                       }
                     },
                     {
@@ -1522,9 +1206,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPSPages/BXPSTHDataSampleRatePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSTHDataSampleRatePage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSTHDataSampleRatePage/Model": []
                       }
                     },
                     {
@@ -1540,9 +1222,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPSPages/BXPSRemoteReminderPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRemoteReminderPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSRemoteReminderPage/Model": []
                       }
                     },
                     {
@@ -1572,9 +1252,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPTPages/BXPTAccParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccParamsPage/Model": []
                       }
                     },
                     {
@@ -1590,9 +1268,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPTPages/BXPTAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1617,24 +1293,12 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPTPages/BXPTPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAdvParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTMotionEventPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTRemoteReminderPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAccParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTAdvParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTMotionEventPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTRemoteReminderPage": []
                       }
                     }
                   ]
@@ -1646,9 +1310,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/BXPTPages/BXPTRemoteReminderPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTRemoteReminderPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTRemoteReminderPage/Model": []
                       }
                     },
                     {
@@ -1666,36 +1328,16 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/ManageBleDevicesPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/ManageBleDevicesPage/View": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/NormalConnectedPage": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/ManageBleDevicesPage/View": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBDPages/BXPButtonPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPBCRPages/BXPButtonCRPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPCPages/BXPCPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPDPages/BXPDPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPTPages/BXPTPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/BXPSPages/BXPSPage": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages": [],
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/NormalConnectedPage": []
                   }
                 },
                 {
@@ -1723,9 +1365,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/MKTofPages/TofAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1741,21 +1381,11 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/MKTofPages/TofPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAdvParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAccDataPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAdvParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofAccDataPage": []
                       }
                     }
                   ]
@@ -1776,9 +1406,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/MKTofPages/TofSensorParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/MKTofPages/TofSensorParamsPage/Model": []
                       }
                     },
                     {
@@ -1796,9 +1424,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/NormalConnectedPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/ManageBleModules/NormalConnectedPage/View": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/ManageBleModules/NormalConnectedPage/View": []
                   }
                 },
                 {
@@ -1817,9 +1443,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/PirPages/PirAdvParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirAdvParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirAdvParamsPage/Model": []
                       }
                     },
                     {
@@ -1835,18 +1459,10 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/PirPages/PirPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirAdvParamsPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorDataPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorParamsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/ButtonDFUPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirAdvParamsPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorDataPage": [],
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorParamsPage": []
                       }
                     }
                   ]
@@ -1867,9 +1483,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/ManageBleModules/PirPages/PirSensorParamsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorParamsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/ManageBleModules/PirPages/PirSensorParamsPage/Model": []
                       }
                     },
                     {
@@ -1889,15 +1503,9 @@
               "name": "Controller",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/ScanPage/Controller/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/ScanPage/Model": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/ScanPage/View": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/AddDeviceModules": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/ScanPage/Model": [],
+                "MKGatewayMiniTwo/Functions/ScanPage/View": [],
+                "MKGatewayMiniTwo/Functions/AddDeviceModules": []
               }
             },
             {
@@ -1908,9 +1516,7 @@
               "name": "View",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/ScanPage/View/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/ScanPage/Model": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/ScanPage/Model": []
               }
             }
           ]
@@ -1922,12 +1528,8 @@
               "name": "Controller",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/ServerForApp/Controller/**",
               "dependencies": {
-                "MKGatewayMiniTwo/Functions/ServerForApp/Model": [
-
-                ],
-                "MKGatewayMiniTwo/Functions/ServerForApp/View": [
-
-                ]
+                "MKGatewayMiniTwo/Functions/ServerForApp/Model": [],
+                "MKGatewayMiniTwo/Functions/ServerForApp/View": []
               }
             },
             {
@@ -1950,9 +1552,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/DeviceInfoPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/SettingPages/DeviceInfoPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/SettingPages/DeviceInfoPage/Model": []
                   }
                 },
                 {
@@ -1971,15 +1571,9 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttParamsListPage/Model": [],
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage": [],
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage": []
                       }
                     },
                     {
@@ -1995,12 +1589,8 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/Model": [],
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttServerPage/View": []
                       }
                     },
                     {
@@ -2020,9 +1610,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages/MqttWifiSettingsPage/Model": []
                       }
                     },
                     {
@@ -2043,9 +1631,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconPage/Model": []
                       }
                     },
                     {
@@ -2061,9 +1647,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/AdvBeaconV2Page/Model": []
                       }
                     },
                     {
@@ -2079,9 +1663,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/CommunicatePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/CommunicatePage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/CommunicatePage/Model": []
                       }
                     },
                     {
@@ -2097,9 +1679,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/DataReportPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/DataReportPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/DataReportPage/Model": []
                       }
                     },
                     {
@@ -2115,9 +1695,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/IndicatorSettingsPage/Model": []
                       }
                     },
                     {
@@ -2133,9 +1711,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/NetworkStatusPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NetworkStatusPage/Model": []
                       }
                     },
                     {
@@ -2151,9 +1727,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/NTPServerPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NTPServerPage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NTPServerPage/Model": []
                       }
                     },
                     {
@@ -2169,9 +1743,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/ReconnectTimePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/ReconnectTimePage/Model": []
                       }
                     },
                     {
@@ -2187,9 +1759,7 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/ResetByButtonPage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/ResetByButtonPage/View": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/ResetByButtonPage/View": []
                       }
                     },
                     {
@@ -2205,12 +1775,8 @@
                       "name": "Controller",
                       "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/NormalSettings/SystemTimePage/Controller/**",
                       "dependencies": {
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/SystemTimePage/View": [
-
-                        ],
-                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NTPServerPage": [
-
-                        ]
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/SystemTimePage/View": [],
+                        "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings/NTPServerPage": []
                       }
                     },
                     {
@@ -2228,9 +1794,7 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/OTAPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/SettingPages/OTAPage/Model": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/SettingPages/OTAPage/Model": []
                   }
                 },
                 {
@@ -2246,18 +1810,10 @@
                   "name": "Controller",
                   "source_files": "MKGatewayMiniTwo/Classes/Functions/SettingPages/SettingPage/Controller/**",
                   "dependencies": {
-                    "MKGatewayMiniTwo/Functions/SettingPages/DeviceInfoPage": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings": [
-
-                    ],
-                    "MKGatewayMiniTwo/Functions/SettingPages/OTAPage": [
-
-                    ]
+                    "MKGatewayMiniTwo/Functions/SettingPages/DeviceInfoPage": [],
+                    "MKGatewayMiniTwo/Functions/SettingPages/ModifyNetworkPages": [],
+                    "MKGatewayMiniTwo/Functions/SettingPages/NormalSettings": [],
+                    "MKGatewayMiniTwo/Functions/SettingPages/OTAPage": []
                   }
                 }
               ]
