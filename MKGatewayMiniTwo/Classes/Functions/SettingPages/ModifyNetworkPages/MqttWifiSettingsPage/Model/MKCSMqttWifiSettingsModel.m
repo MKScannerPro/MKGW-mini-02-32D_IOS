@@ -185,8 +185,10 @@
         if (self.eapPassword.length > 64) {
             return @"password error";
         }
-        if (self.verifyServer && !ValidStr(self.caFilePath)) {
-            return @"CA File cannot be empty.";
+        if (self.verifyServer) {
+            if (self.caFilePath.length > 256) {
+                return @"CA File Path Error";
+            }
         }
     }
     if (self.eapType == 2) {
