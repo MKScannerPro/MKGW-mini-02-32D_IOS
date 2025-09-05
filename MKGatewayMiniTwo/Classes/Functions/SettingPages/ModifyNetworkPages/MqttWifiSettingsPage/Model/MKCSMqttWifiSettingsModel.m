@@ -66,10 +66,14 @@
             return;
         }
         
-        if (self.security == 1) {
-            if (![self configCerts]) {
-                [self operationFailedBlockWithMsg:@"Config Certificate Infos Error" block:failedBlock];
-                return;
+        if (self.security == 1 && !(!ValidStr(self.caFilePath) && !ValidStr(self.clientKeyPath) && !ValidStr(self.clientCertPath))) {
+            //三个证书同时为空，则不需要发送
+            if (((self.eapType == 0 || self.eapType == 1) && self.verifyServer) || self.eapType == 2) {
+                //TLS需要设置这个，0:PEAP-MSCHAPV2  1:TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才设置
+                if (![self configCerts]) {
+                    [self operationFailedBlockWithMsg:@"Config EAP Certs Error" block:failedBlock];
+                    return;
+                }
             }
         }
         
@@ -190,12 +194,9 @@
         if (self.domainID.length > 64) {
             return @"domain ID error";
         }
-        if (!ValidStr(self.caFilePath)) {
-            return @"CA File cannot be empty.";
+        if (self.caFilePath.length > 256 || self.clientKeyPath.length > 256 || self.clientCertPath.length > 256) {
+            return @"File Path Error";
         }
-//        if (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName)) {
-//            return @"Client File cannot be empty.";
-//        }
     }
     if (!self.dhcp) {
         if (![self.ip regularExpressions:isIPAddress]) {
