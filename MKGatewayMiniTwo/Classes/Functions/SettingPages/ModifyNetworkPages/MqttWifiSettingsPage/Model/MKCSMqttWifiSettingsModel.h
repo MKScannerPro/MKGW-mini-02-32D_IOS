@@ -12,7 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKCSMqttWifiSettingsModel : NSObject<mk_cs_mqttModifyWifiProtocol,mk_cs_mqttModifyNetworkProtocol>
+@interface MKCSMqttWifiSettingsModel : NSObject
+<mk_cs_mqttModifyWifiProtocol,
+mk_cs_mqttModifyNetworkProtocol,
+mk_cs_mqttModifyWifiEapCertProtocol>
 
 /// 0:personal  1:enterprise
 @property (nonatomic, assign)NSInteger security;

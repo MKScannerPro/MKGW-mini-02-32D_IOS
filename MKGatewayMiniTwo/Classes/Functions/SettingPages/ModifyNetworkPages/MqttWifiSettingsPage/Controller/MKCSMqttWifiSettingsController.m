@@ -315,7 +315,7 @@ mk_textSwitchCellDelegate>
                 //TLS需要配置证书，PEAP-MSCHAPV2和TTLS-MSCHAPV2这两种必须验证服务器打开的情况下才配置证书
                 [[NSNotificationCenter defaultCenter] addObserver:self
                                                          selector:@selector(receiveUpdateEAPCerts:)
-                                                             name:MKCSReceiveDeviceUpdateMqttCertsResultNotification
+                                                             name:MKCSReceiveDeviceUpdateEapCertsResultNotification
                                                            object:nil];
                 return;
             }

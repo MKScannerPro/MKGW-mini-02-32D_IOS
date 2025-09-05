@@ -43,6 +43,11 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        NSString *checkMsg = [self checkMsg];
+        if (ValidStr(checkMsg)) {
+            [self operationFailedBlockWithMsg:checkMsg block:failedBlock];
+            return;
+        }
         NSInteger status = [self readOTAState];
         if (status == -1) {
             [self operationFailedBlockWithMsg:@"Read OTA Status Error" block:failedBlock];
@@ -59,6 +64,13 @@
         if (![self configNetworkInfos]) {
             [self operationFailedBlockWithMsg:@"Config Network Infos Error" block:failedBlock];
             return;
+        }
+        
+        if (self.security == 1) {
+            if (![self configCerts]) {
+                [self operationFailedBlockWithMsg:@"Config Certificate Infos Error" block:failedBlock];
+                return;
+            }
         }
         
         moko_dispatch_main_safe(^{
@@ -141,6 +153,18 @@
     return success;
 }
 
+- (BOOL)configCerts {
+    __block BOOL success = NO;
+    [MKCSMQTTInterface cs_modifyWifiCerts:self macAddress:[MKCSDeviceModeManager shared].macAddress topic:[MKCSDeviceModeManager shared].subscribedTopic sucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
 #pragma mark - private method
 - (NSString *)checkMsg {
     if (!ValidStr(self.ssid) || self.ssid.length > 32) {
@@ -148,6 +172,30 @@
     }
     if (self.wifiPassword.length > 64) {
         return @"password error";
+    }
+    if (self.eapType == 0 || self.eapType == 1) {
+        //PEAP-MSCHAPV2/TTLS-MSCHAPV2
+        if (self.eapUserName.length > 32) {
+            return @"username error";
+        }
+        if (self.eapPassword.length > 64) {
+            return @"password error";
+        }
+        if (self.verifyServer && !ValidStr(self.caFilePath)) {
+            return @"CA File cannot be empty.";
+        }
+    }
+    if (self.eapType == 2) {
+        //TLS
+        if (self.domainID.length > 64) {
+            return @"domain ID error";
+        }
+        if (!ValidStr(self.caFilePath)) {
+            return @"CA File cannot be empty.";
+        }
+//        if (!ValidStr(self.clientKeyName) || !ValidStr(self.clientCertName)) {
+//            return @"Client File cannot be empty.";
+//        }
     }
     if (!self.dhcp) {
         if (![self.ip regularExpressions:isIPAddress]) {

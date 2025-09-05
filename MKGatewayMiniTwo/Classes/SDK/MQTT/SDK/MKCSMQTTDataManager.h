@@ -22,6 +22,8 @@ extern NSString *const MKCSReceiveDeviceOTAResultNotification;
 
 extern NSString *const MKCSReceiveDeviceNpcOTAResultNotification;
 
+extern NSString *const MKCSReceiveDeviceUpdateEapCertsResultNotification;
+
 extern NSString *const MKCSReceiveDeviceResetByButtonNotification;
 
 extern NSString *const MKCSReceiveDeviceUpdateMqttCertsResultNotification;
