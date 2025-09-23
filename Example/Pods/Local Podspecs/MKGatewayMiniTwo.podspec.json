@@ -184,12 +184,20 @@
       ]
     },
     {
+      "name": "LoginManager",
+      "source_files": "MKGatewayMiniTwo/Classes/LoginManager/**",
+      "dependencies": {
+        "MKIotCloudManager": []
+      }
+    },
+    {
       "name": "Functions",
       "dependencies": {
         "MKGatewayMiniTwo/SDK": [],
         "MKGatewayMiniTwo/Expand": [],
         "MKGatewayMiniTwo/CTMediator": [],
         "MKGatewayMiniTwo/DeviceModel": [],
+        "MKGatewayMiniTwo/LoginManager": [],
         "MKBaseModuleLibrary": [],
         "MKCustomUIModule": [],
         "MLInputDodger": []
@@ -443,7 +451,8 @@
                 "MKGatewayMiniTwo/Functions/DeviceListPage/Model": [],
                 "MKGatewayMiniTwo/Functions/ServerForApp": [],
                 "MKGatewayMiniTwo/Functions/ScanPage": [],
-                "MKGatewayMiniTwo/Functions/DeviceDataPage": []
+                "MKGatewayMiniTwo/Functions/DeviceDataPage": [],
+                "MKGatewayMiniTwo/Functions/SyncDevicePage": []
               }
             },
             {
@@ -1539,6 +1548,22 @@
             {
               "name": "View",
               "source_files": "MKGatewayMiniTwo/Classes/Functions/ServerForApp/View/**"
+            }
+          ]
+        },
+        {
+          "name": "SyncDevicePage",
+          "subspecs": [
+            {
+              "name": "Controller",
+              "source_files": "MKGatewayMiniTwo/Classes/Functions/SyncDevicePage/Controller/**",
+              "dependencies": {
+                "MKGatewayMiniTwo/Functions/SyncDevicePage/View": []
+              }
+            },
+            {
+              "name": "View",
+              "source_files": "MKGatewayMiniTwo/Classes/Functions/SyncDevicePage/View/**"
             }
           ]
         },
