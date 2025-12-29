@@ -576,6 +576,22 @@
               ]
             },
             {
+              "name": "FilterByNanoBeaconPage",
+              "subspecs": [
+                {
+                  "name": "Controller",
+                  "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByNanoBeaconPage/Controller/**",
+                  "dependencies": {
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByNanoBeaconPage/Model": []
+                  }
+                },
+                {
+                  "name": "Model",
+                  "source_files": "MKGatewayMiniTwo/Classes/Functions/FilterPages/FilterByNanoBeaconPage/Model/**"
+                }
+              ]
+            },
+            {
               "name": "FilterByOtherPage",
               "subspecs": [
                 {
@@ -623,6 +639,7 @@
                     "MKGatewayMiniTwo/Functions/FilterPages/FilterByButtonPage": [],
                     "MKGatewayMiniTwo/Functions/FilterPages/FilterByTag": [],
                     "MKGatewayMiniTwo/Functions/FilterPages/FilterByPirPage": [],
+                    "MKGatewayMiniTwo/Functions/FilterPages/FilterByNanoBeaconPage": [],
                     "MKGatewayMiniTwo/Functions/FilterPages/FilterByOtherPage": []
                   }
                 },

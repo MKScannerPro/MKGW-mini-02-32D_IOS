@@ -958,6 +958,32 @@ NS_ASSUME_NONNULL_BEGIN
                             sucBlock:(void (^)(id returnData))sucBlock
                          failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Filtered information of NanoBeacon.
+/// @param macAddress WIFI_STA Mac address of the device.(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)cs_readFilterByNanoBeaconWithMacAddress:(NSString *)macAddress
+                                          topic:(NSString *)topic
+                                       sucBlock:(void (^)(id returnData))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Filtered information of NanoBeacon.
+/// @param isOn isOn
+/// @param advType advType
+/// @param manufactureIDList You can set up to 10 filters.2 Bytes.
+/// @param macAddress WIFI_STA Mac address of the device(e.g.AABBCCDDEEFF)
+/// @param topic topic 1-128 Characters
+/// @param sucBlock Success callback
+/// @param failedBlock Failed callback
++ (void)cs_configFilterByNanoBeacon:(BOOL)isOn
+                            advType:(mk_cs_filterByNanoBeaconAdvType)advType
+                  manufactureIDList:(NSArray <NSString *>*)manufactureIDList
+                         macAddress:(NSString *)macAddress
+                              topic:(NSString *)topic
+                           sucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
 #pragma mark *********************  BXP-B-D  ************************
 
 /// Read the service and feature information of the specified BXP-Button connected to the current gateway.

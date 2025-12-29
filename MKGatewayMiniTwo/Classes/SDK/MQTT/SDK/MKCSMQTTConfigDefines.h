@@ -93,6 +93,12 @@ typedef NS_ENUM(NSInteger, mk_cs_bxpcrAlarmEventType) {
     mk_cs_bxpcrAlarmEventType_long
 };
 
+typedef NS_ENUM(NSInteger, mk_cs_filterByNanoBeaconAdvType) {
+    mk_cs_filterByNanoBeaconAdvType_normal,
+    mk_cs_filterByNanoBeaconAdvType_trigger,
+    mk_cs_filterByNanoBeaconAdvType_all
+};
+
 
 @protocol cs_indicatorLightStatusProtocol <NSObject>
 
@@ -294,7 +300,11 @@ typedef NS_ENUM(NSInteger, mk_cs_bxpcrAlarmEventType) {
 
 @property (nonatomic, assign)BOOL rawData_advertising;
 
+/// V2中无此参数
 @property (nonatomic, assign)BOOL rawData_response;
+
+/// V2中有此参数
+@property (nonatomic, assign)BOOL parsed_data;
 
 @end
 

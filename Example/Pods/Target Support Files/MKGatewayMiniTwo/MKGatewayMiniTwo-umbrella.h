@@ -79,6 +79,8 @@
 #import "MKCSFilterByButtonModel.h"
 #import "MKCSFilterByMacController.h"
 #import "MKCSFilterByMacModel.h"
+#import "MKCSFilterByNanoBeaconController.h"
+#import "MKCSFilterByNanoBeaconModel.h"
 #import "MKCSFilterByOtherController.h"
 #import "MKCSFilterByOtherModel.h"
 #import "MKCSFilterByPirController.h"

@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     mk_cs_server_taskConfigDuplicateDataFilterOperation,    //配置扫描重复数据参数
     mk_cs_server_taskConfigDataReportTimeoutOperation,      //配置数据包上报超时时间
     mk_cs_server_taskConfigUploadDataOptionOperation,       //配置扫描数据上报内容选项
+    mk_cs_server_taskConfigFilterByNanoBeaconOperation,     //配置过滤NanoBeacon信息
     
     mk_cs_server_taskConnectBXPButtonWithMacOperation,      //连接指定mac地址的BXP-Button设备
     
@@ -205,6 +206,7 @@ typedef NS_ENUM(NSInteger, mk_cs_serverOperationID) {
     
     mk_cs_server_taskReadUploadDataIntervalOperation,           //读取数据上报间隔
     mk_cs_server_taskConfigUploadDataIntervalOperation,     //配置数据上报间隔
+    mk_cs_server_taskReadFilterByNanoBeaconOperation,       //读取NanoBeacon过滤内容
     
     mk_cs_server_taskReadBleCommunicateTimeoutOperation,    //读取蓝牙连接通信超时时间
     mk_cs_server_taskConfigBleCommunicateTimeoutOperation,  //配置蓝牙连接通信超时时间
